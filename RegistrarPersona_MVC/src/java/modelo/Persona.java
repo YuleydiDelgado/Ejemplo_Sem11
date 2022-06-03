@@ -44,11 +44,11 @@ public class Persona {
     public Persona(){
         try {
             Class.forName("com.mysql.jdbc.Driver");//Driver de la base de datos
-            cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_recurso_humano?zeroDateTimeBehavior=convertToNul", "root", "");//url de la BD, user, pass
-            //System.out.print("conxion existosa");
+            cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd__recurso_humano?zeroDateTimeBehavior=convertToNull", "root", "");//url de la BD, user, pass
+            System.out.print("conxion existosa");
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
-             //System.out.print("error de conexion");
+             System.out.print("error de conexion");
         }
     }
     public Persona(String dui, String apellido,String nombre){
@@ -57,6 +57,15 @@ public class Persona {
         this.nombres = nombres;    
     }
     
+    public static void main(String[] args) {
+        
+        Persona objeto=new Persona();
+        objeto.setDui("1111222");
+        objeto.setApellidos("rosales");
+        objeto.setNombres("sarai");
+         
+        System.out.println(objeto.insertarDatos());
+    }
     
     public boolean insertarDatos(){
         try {
