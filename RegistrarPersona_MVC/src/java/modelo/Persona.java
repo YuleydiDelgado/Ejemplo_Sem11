@@ -61,8 +61,8 @@ public class Persona {
         
         Persona objeto=new Persona();
         objeto.setDui("1111222");
-        objeto.setApellidos("rosales");
-        objeto.setNombres("sarai");
+        objeto.setApellidos("Minero");
+        objeto.setNombres("Alexandra");
          
         System.out.println(objeto.insertarDatos());
     }
